@@ -1,6 +1,6 @@
 using System;
 
-namespace TrainIT.Models
+namespace TrainIT.Models.ViewModels
 {
     public class ErrorViewModel
     {
