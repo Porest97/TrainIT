@@ -1,0 +1,76 @@
+﻿@model TrainIT.Models.DataModels.DustTest
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+
+
+<h6>Register new Dust test</h6>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="DateTimePreformed" class="control-label"></label>
+                <input asp-for="DateTimePreformed" class="form-control" />
+                <span asp-validation-for="DateTimePreformed" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ArenaId" class="control-label"></label>
+                <select asp-for="ArenaId" class="form-control" asp-items="ViewBag.ArenaId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="SportId" class="control-label"></label>
+                <select asp-for="SportId" class="form-control" asp-items="ViewBag.SportId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="PersonId" class="control-label"></label>
+                <select asp-for="PersonId" class="form-control" asp-items="ViewBag.PersonId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="TimeSet1" class="control-label"></label>
+                <input asp-for="TimeSet1" class="form-control" />
+                <span asp-validation-for="TimeSet1" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TimeSet2" class="control-label"></label>
+                <input asp-for="TimeSet2" class="form-control" />
+                <span asp-validation-for="TimeSet2" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TimeSet3" class="control-label"></label>
+                <input asp-for="TimeSet3" class="form-control" />
+                <span asp-validation-for="TimeSet3" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TimeSet4" class="control-label"></label>
+                <input asp-for="TimeSet4" class="form-control" />
+                <span asp-validation-for="TimeSet4" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TimeTotal" class="control-label"></label>
+                <input asp-for="TimeTotal" class="form-control" />
+                <span asp-validation-for="TimeTotal" class="text-danger"></span>
+            </div>
+            <div class="custom-checkbox">
+                <label asp-for="Approved">
+                    <input asp-for="Approved" />
+                    @Html.DisplayNameFor(m => m.Approved)
+                </label>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a class="btn btn-sm btn-success" asp-controller="DustTests" asp-action="IndexSearch">Back to Dust tests </a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

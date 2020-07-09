@@ -1,0 +1,49 @@
+﻿@model TrainIT.Models.DataModels.DustTest
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<div class="card-group">
+    <div class="card-body">
+        <p class="col-sm-6">
+            Hockey Referees !
+            D.U.S.T => D.A.S.T like the rest of the World call it ;)
+            Is a Distance Aerobic Shuttle Test ( DAST ).
+            Or BIP test.
+            Values for Hockey Referees in Sweden:
+            Division 5 => Seriusly exicuted test !
+            Division 4 => 247 seconds !
+            Division 3 => 236 seconds !
+            Convenant level  Division 2 and above => Approved 238 - 233 Well Approved 232-227 Extremey Approved 221-226.
+        </p>
+    </div>
+</div>
+<div class="card-group">
+    <div class="card-body">
+        <p class="col-sm-6">
+            <div class="row">
+                <div class="col-sm-12">Tested person :  @Html.DisplayFor(model => model.TestedPerson.FullName)</div>
+                <div class="col-sm-12"> At Arena : @Html.DisplayFor(model => model.Arena.ArenaName)</div>
+                <div class="col-sm-12"> Sport : @Html.DisplayFor(model => model.Sport.SportName)</div>
+                <div class="col-sm-12">Date : @Html.DisplayFor(model => model.DateTimePreformed)</div>
+                <div class="col-sm-12">Set #1 : @Html.DisplayFor(model => model.TimeSet1)</div>
+                <div class="col-sm-12">Set #2 : @Html.DisplayFor(model => model.TimeSet2)</div>
+                <div class="col-sm-12">Set #3 : @Html.DisplayFor(model => model.TimeSet3)</div>
+                <div class="col-sm-12">Set #4 : @Html.DisplayFor(model => model.TimeSet4)</div>
+                <div class="col-sm-12">Result : @Html.DisplayFor(model => model.TimeTotal)</div>
+                <div class="form-group">
+                    <div class="custom-checkbox">
+                        <label asp-for="Approved">
+                            <input asp-for="Approved" />
+                            @Html.DisplayNameFor(m => m.Approved)
+                        </label>
+                    </div>
+                </div>
+                <div class="col-sm-12">
+                    <a class="btn btn-sm btn-success" asp-controller="DustTests" asp-action="Edit" asp-route-id="@Model.Id">Edit</a>
+                    <a class="btn btn-sm btn-success" asp-controller="DustTests" asp-action="IndexSearch">Back to Dust tests</a>
+            </div>
+        </div>
+    </div>
+</div>

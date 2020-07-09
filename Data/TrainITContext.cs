@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using TrainIT.Models;
+using TrainIT.Models.DataModels;
 
 namespace TrainIT.Data
 {
@@ -14,6 +15,10 @@ namespace TrainIT.Data
             : base(options)
         {
         }
+        public DbSet<TrainIT.Models.DataModels.Arena> Arena { get; set; }
+        public DbSet<TrainIT.Models.DataModels.DustTest> DustTest { get; set; }
+        public DbSet<TrainIT.Models.DataModels.Person> Person { get; set; }
+        public DbSet<TrainIT.Models.DataModels.Sport> Sport { get; set; }
 
        
     }
