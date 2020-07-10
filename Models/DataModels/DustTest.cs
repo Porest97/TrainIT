@@ -34,19 +34,19 @@ namespace TrainIT.Models.DataModels
         public Person TestedPerson { get; set; }
 
         [Display(Name = "#1")]
-        public int TimeSet1 { get; set; }
+        public decimal TimeSet1 { get; set; }
 
         [Display(Name = "#2")]
-        public int TimeSet2 { get; set; }
+        public decimal TimeSet2 { get; set; }
 
         [Display(Name = "#3")]
-        public int TimeSet3 { get; set; }
+        public decimal TimeSet3 { get; set; }
 
         [Display(Name = "#4")]
-        public int TimeSet4 { get; set; }
+        public decimal TimeSet4 { get; set; }
 
         [Display(Name = "Total time (Seconds)")]
-        public int TimeTotal { get; set; }
+        public decimal TimeTotal { get; set; }
 
         [Display(Name = "Approved")]
         public bool Approved { get; set; }

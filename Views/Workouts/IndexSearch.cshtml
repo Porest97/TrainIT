@@ -1,0 +1,78 @@
+﻿@model IEnumerable<TrainIT.Models.DataModels.Workout>
+@{
+    ViewData["Title"] = "IndexSearch";
+}
+
+
+<div class="badge">
+
+    <h3>Workouts</h3>
+
+    <p><a class="btn btn-sm btn-outline-success" asp-controller="Workouts" asp-action="Create">Register new workout</a></p>
+
+    <form asp-controller="Workouts" asp-action="IndexSearch">
+        <p>
+            Search for Person,
+            @Html.DisplayNameFor(model => model.Owner.FirstName): <input type="text" name="SearchString">
+            @Html.DisplayNameFor(model => model.Owner.LastName): <input type="text" name="SearchString1">
+            @Html.DisplayNameFor(model => model.Sport.SportName): <input type="text" name="SearchString2">
+            <input type="submit" value="Search" />
+        </p>
+    </form>
+    @*<form asp-controller="Incidents" asp-action="IndexSearch">
+            <p>
+                @Html.DisplayNameFor(model => model.IncidentPriority.IncidentPriorityName): <input type="text" name="SearchString4">
+                @Html.DisplayNameFor(model => model.IncidentType.IncidentTypeName): <input type="text" name="SearchString5">
+                @Html.DisplayNameFor(model => model.PurchaseOrder.PONumber): <input type="text" name="SearchString6">
+                Creator: <input type="text" name="SearchString7">
+                <input type="submit" value="Search" />
+            </p>
+        </form>*@
+
+    @*<div class="alert-heading">
+            <h3>Total Hours: @Model.Where(i => i.NABLogStatusId == 2).Sum(i => i.Hours)</h3>
+        </div>*@
+    <table class="table table-responsive-sm table-striped">
+        <thead>
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.DateTimeStarted)</th>
+                <th>@Html.DisplayNameFor(model => model.DateTimeEnded)</th>
+                <th>@Html.DisplayNameFor(model => model.Arena)</th>
+                <th>@Html.DisplayNameFor(model => model.Owner)</th>
+
+                <th>@Html.DisplayNameFor(model => model.Sport)</th>
+                <th>@Html.DisplayNameFor(model => model.Duration)</th>
+                <th>@Html.DisplayNameFor(model => model.Distance)</th>
+                <th>@Html.DisplayNameFor(model => model.Kcal)</th>
+
+                <th>@Html.DisplayNameFor(model => model.Status)</th>
+                @*<th>@Html.DisplayNameFor(model => model.Approved)</th>*@
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.OrderBy(d => d.DateTimeEnded))
+            {
+                <tr>
+                    <td> @Html.DisplayFor(modelItem => item.DateTimeStarted)</td>
+                    <td> @Html.DisplayFor(modelItem => item.DateTimeEnded)</td>
+                    <td> @Html.DisplayFor(modelItem => item.Arena.ArenaName)</td>
+                    <td> @Html.DisplayFor(modelItem => item.Owner.FullName)</td>
+
+                    <td>@Html.DisplayFor(modelItem => item.Sport.SportName)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Duration)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Distance)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Kcal)</td>
+
+                    <td>@Html.DisplayFor(modelItem => item.Status)</td>
+                    @*<td>@Html.DisplayFor(modelItem => item.Approved)</td>*@
+
+                    <td>
+                        <a class="btn btn-sm btn-success" asp-action="Details" asp-route-id="@item.Id">Details</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <a class="btn btn-sm btn-success" asp-controller="Home" asp-action="Index">Home</a>
+</div>

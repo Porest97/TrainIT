@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using TrainIT.Data;
 
 namespace TrainIT.Migrations
 {
     [DbContext(typeof(TrainITContext))]
-    partial class TrainITContextModelSnapshot : ModelSnapshot
+    [Migration("20200710013608_AddedWorkouts")]
+    partial class AddedWorkouts
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -285,20 +287,20 @@ namespace TrainIT.Migrations
                     b.Property<int?>("SportId")
                         .HasColumnType("int");
 
-                    b.Property<decimal>("TimeSet1")
-                        .HasColumnType("decimal(18,2)");
+                    b.Property<int>("TimeSet1")
+                        .HasColumnType("int");
 
-                    b.Property<decimal>("TimeSet2")
-                        .HasColumnType("decimal(18,2)");
+                    b.Property<int>("TimeSet2")
+                        .HasColumnType("int");
 
-                    b.Property<decimal>("TimeSet3")
-                        .HasColumnType("decimal(18,2)");
+                    b.Property<int>("TimeSet3")
+                        .HasColumnType("int");
 
-                    b.Property<decimal>("TimeSet4")
-                        .HasColumnType("decimal(18,2)");
+                    b.Property<int>("TimeSet4")
+                        .HasColumnType("int");
 
-                    b.Property<decimal>("TimeTotal")
-                        .HasColumnType("decimal(18,2)");
+                    b.Property<int>("TimeTotal")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
@@ -384,14 +386,14 @@ namespace TrainIT.Migrations
                     b.Property<DateTime>("DateTimeStarted")
                         .HasColumnType("datetime2");
 
-                    b.Property<decimal>("Distance")
-                        .HasColumnType("decimal(18,2)");
+                    b.Property<double>("Distance")
+                        .HasColumnType("float");
 
-                    b.Property<decimal>("Duration")
-                        .HasColumnType("decimal(18,2)");
+                    b.Property<double>("Duration")
+                        .HasColumnType("float");
 
-                    b.Property<decimal>("Kcal")
-                        .HasColumnType("decimal(18,2)");
+                    b.Property<double>("Kcal")
+                        .HasColumnType("float");
 
                     b.Property<int?>("PersonId")
                         .HasColumnType("int");

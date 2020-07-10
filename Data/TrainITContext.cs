@@ -19,6 +19,7 @@ namespace TrainIT.Data
         public DbSet<TrainIT.Models.DataModels.DustTest> DustTest { get; set; }
         public DbSet<TrainIT.Models.DataModels.Person> Person { get; set; }
         public DbSet<TrainIT.Models.DataModels.Sport> Sport { get; set; }
+        public DbSet<TrainIT.Models.DataModels.Workout> Workout { get; set; }
 
        
     }
